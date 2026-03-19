@@ -1,0 +1,132 @@
+[project]
+name = "presto-eokit"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Walid Ghariani", email = "walid@dhigroup.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "einops>=0.8.1",
+    "pandas>=2.2.3",
+    "tqdm>=4.67.1",
+    "lightning>=2.5.1.post0",
+    "tensorboard>=2.19.0",
+    "wandb>=0.19.11",
+    "standard-imghdr>=3.13.0",
+    "rioxarray>=0.19.0",
+    "xarray>=2025.9.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/presto_eokit"]
+
+[project.optional-dependencies]
+
+ml = [
+    "scikit-learn>=1.6.1",
+    "xgboost>=3.0.1",
+    "lightgbm>=4.6.0", 
+]
+
+viz = [
+    "matplotlib>=3.10.3",
+    "seaborn>=0.13.2",
+    "plotly>=6.3.0",
+]
+
+cpu = [
+    "torch==2.6.0+cpu",
+    "torchvision==0.21.0+cpu",
+]
+cu124 = [
+    "torch==2.6.0+cu124",
+    "torchvision==0.21.0+cu124",
+]
+cu126 = [
+    "torch==2.6.0+cu126",
+    "torchvision==0.21.0+cu126",
+]
+cu128 = [
+    "torch==2.6.0+cu128",
+    "torchvision==0.21.0+cu128",
+]
+
+dev = [
+    "build",
+    "pytest",
+    "ruff",
+    "black",
+    "mypy",
+    "mkdocs",
+    "mkdocstrings[python]", 
+    "mkdocs-material",
+    "ipykernel>=6.29.5",
+    "jupyterlab>=4.4.2",
+]
+
+test = [
+    "pytest",
+    "pytest-cov",
+    "mypy",
+]
+
+notebooks = [
+    "jupyter",
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu124", extra = "cu124" },
+    { index = "pytorch-cu126", extra = "cu126" },
+    { index = "pytorch-cu128", extra = "cu128" },
+]
+torchvision = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu124", extra = "cu124" },
+    { index = "pytorch-cu126", extra = "cu126" },
+    { index = "pytorch-cu128", extra = "cu128" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 88
+lint.select = ["E", "F", "I"]  
+lint.ignore = ["E501"]        
+extend-exclude = ["notebooks"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_unused_configs = true
+warn_return_any = true
+strict_optional = true
