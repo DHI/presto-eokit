@@ -1,6 +1,6 @@
 # presto-eokit
 
-**presto-eokit** is a PyTorch-based library built on top of **Presto** [Lightweight, Pre-trained Transformers for
+**presto-eokit** is a PyTorch-based library built on top of **Presto** (1) [Lightweight, Pre-trained Transformers for
 Remote Sensing Timeseries] from NASA Harvest, with several enhancements:
 
 * End-to-end, pipeline with one function `presto_eokit.generate_embeddings` for generating embeddings from different EO modalities (Sentinel-1, Sentinel-2, ERA5, SRTM and DW).
@@ -202,3 +202,7 @@ trainer = L.Trainer(max_epochs=100, accelerator="auto")
 trainer.fit(pl_model, train_dataloaders=train_dl, val_dataloaders=val_dl)
 trainer.test(pl_model, dataloaders=test_dl)
 ```
+
+## Bibliography
+
+1. Tseng, Gabriel, et al. "Lightweight, pre-trained transformers for remote sensing timeseries." arXiv preprint arXiv:2304.14065 (2023). https://doi.org/10.48550/arXiv.2304.14065
