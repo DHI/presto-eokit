@@ -1,7 +1,7 @@
 # presto-eokit
 
 **presto-eokit** is a PyTorch-based library built on top of **Presto** (1) [Lightweight, Pre-trained Transformers for
-Remote Sensing Timeseries] from NASA Harvest, with several enhancements:
+Remote Sensing Timeseries](https://github.com/nasaharvest/presto) from NASA Harvest, with several enhancements:
 
 * End-to-end, pipeline with one function `presto_eokit.generate_embeddings` for generating embeddings from different EO modalities (Sentinel-1, Sentinel-2, ERA5, SRTM and DW).
 * `PrestoLightningModule` compatible with the expected Presto Datasets and Dataloaders for easy integration with PyTorch Lightning.
