@@ -1,0 +1,34 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+*.pyd
+*.so
+*.dylib
+*.egg-info/
+*.egg
+build/
+dist/
+wheels/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb~
+
+# Virtual environments
+.venv/
+.env/
+.conda/
+.mypy_cache/
+.pytest_cache/
+coverage.xml
+htmlcov/
+*.coverage
+
+# UV
+.uv/
+uv.lock   
+
+# IDEs
+.vscode/
+.idea/
+*.swp
