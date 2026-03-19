@@ -119,7 +119,7 @@ uv add "presto_eokit[cu124] @ git+https://github.com/DHI/presto-eokit.git"
 
 ### Generate Embeddings
 
-presto_eokit-Presto can be used to generate embeddings from multimodal EO data such as Sentinel-1, Sentinel-2, ERA5, SRTM and DW. Note that any combination of these modalities and bands is possible. These embeddings capture high level spatial and temporal representations in 128-dimensional feature vectors, which can be used for diverse downstream ML tasks.
+presto-eokit can be used to generate embeddings from multimodal EO data such as Sentinel-1, Sentinel-2, ERA5, SRTM and DW. Note that any combination of these modalities and bands is possible. These embeddings capture high level spatial and temporal representations in 128-dimensional feature vectors, which can be used for diverse downstream ML tasks.
 - End-to-End pipline for generating Embeddings:[![View Jupyter Notebook](https://img.shields.io/badge/view-Jupyter%20notebook-lightgrey.svg)](https://github.com/DHI/presto-eokit/blob/main/notebooks/embeddings_E2E.ipynb)
 ```py
 import torch
@@ -164,7 +164,7 @@ embeds = presto_eokit.generate_embeddings(
 
 ### Downstream Tasks
 
-presto_eokit-Presto can be used as a feature extractor on top of any ML model such as RF, or as a trainable backbone for downstream EO and geospatial ML tasks. The setup is compatible with lightning and supports both regression and classification tasks. Training modes include linear probing or fine-tuning. 
+With presto-eokit, the Presto model also be used as a feature extractor on top of any ML model such as RF, or as a trainable backbone for downstream EO and geospatial ML tasks. The setup is compatible with lightning and supports both regression and classification tasks. Training modes include linear probing or fine-tuning. 
 The following example shows how to finetune Presto for a regression task.
 ```py
 import torch
