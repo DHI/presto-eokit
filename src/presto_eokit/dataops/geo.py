@@ -1,4 +1,4 @@
-# Maintainer: Walid Ghariani (wagh@dhigroup.com)
+# Maintainer: Walid Ghariani 
 # Description: Geospatial utilities.
 
 from typing import Union

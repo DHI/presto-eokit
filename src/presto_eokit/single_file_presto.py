@@ -1,5 +1,5 @@
 # Original Code: https://github.com/nasaharvest/presto/blob/main/single_file_presto.py
-# Modified by: wagh@dhigroup.com
+# Modified by: Walid Ghariani
 # Changes:
 #       - changed the FinetuningHead with an MLP head for better finetunning.
 #        -> increased model capacity for the downstream task with a constant-width 128 MLP layers.

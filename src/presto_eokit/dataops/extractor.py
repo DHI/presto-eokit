@@ -1,4 +1,4 @@
-# Maintainer: Walid Ghariani (wagh@dhigroup.com)
+# Maintainer: Walid Ghariani 
 # Description: Performs data/feature extraction based on specified user configurations.
 
 from dataclasses import dataclass

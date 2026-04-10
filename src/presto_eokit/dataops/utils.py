@@ -1,5 +1,5 @@
 # Original Code: https://github.com/nasaharvest/presto/blob/main/presto/dataops/utils.py
-# Modified by: Walid Ghariani (wagh@dhigroup.com)
+# Modified by: Walid Ghariani 
 # Changes:
 #       - defined DynamicWorld2020_2021_class_amount instead of EEPipeline dependency
 

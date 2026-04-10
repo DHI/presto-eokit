@@ -1,4 +1,4 @@
-# Maintainer: Walid Ghariani (wagh@dhigroup.com)
+# Maintainer: Walid Ghariani 
 # Description: Performs dataarray/feature extraction (embeddings) and wrap it in an xarray.
 
 from typing import Dict, List, Optional, Tuple

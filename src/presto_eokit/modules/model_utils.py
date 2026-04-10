@@ -1,4 +1,4 @@
-# Maintainer: Walid Ghariani (wagh@dhigroup.com)
+# Maintainer: Walid Ghariani 
 # Description: get_model_params function to get model parameters numbers(trainable and non-trainable) for each component of the model
 
 

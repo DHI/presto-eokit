@@ -1,5 +1,5 @@
 # Original Code: https://github.com/nasaharvest/presto/blob/main/presto/dataops/pipelines/s1_s2_era5_srtm.py
-# Modified by: Walid Ghariani (wagh@dhigroup.com)
+# Modified by: Walid Ghariani 
 # Changes:
 #       - Removed dependency from ee and openmapflow
 #       - convert_tif_to_npy method removed from S1_S2_ERA5_SRTM

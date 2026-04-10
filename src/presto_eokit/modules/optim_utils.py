@@ -1,4 +1,4 @@
-# Maintainer: Walid Ghariani (wagh@dhigroup.com)
+# Maintainer: Walid Ghariani
 # Description: layerwise learning rate decay for better Fine-tuning
 
 
