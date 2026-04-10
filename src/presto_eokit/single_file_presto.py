@@ -830,7 +830,7 @@ class Presto(nn.Module):
         """Load the default pretrained Presto model weights from Hugging Face.
 
         Paper: https://arxiv.org/abs/2304.14065
-        Model weighte from: https://huggingface.co/nasaharvest/presto/tree/main
+        Model weights from: https://huggingface.co/nasaharvest/presto/tree/main
         """
 
         if device is None:
