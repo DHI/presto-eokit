@@ -216,6 +216,11 @@ def encode_presto(
       Tensor [n_pixels, feature_dim].
     """
     n = x.shape[0]
+    x = x.to(device)
+    mask = mask.to(device)
+    dw = dw.to(device)
+    latlons = latlons.to(device)
+    months = months.to(device)
     model = model.to(device)
     model.eval()
 
@@ -223,15 +228,18 @@ def encode_presto(
     with torch.no_grad():
         for s in tqdm(range(0, n, batch_size), desc="Encoding"):
             e = min(s + batch_size, n)
-            inputs = {
-                "x": x[s:e].to(device),
-                "mask": mask[s:e].to(device),
-                "dynamic_world": dw[s:e].to(device).long(),
-                "latlons": latlons[s:e].to(device),
-                "month": months[s:e].to(device).long(),
-            }
-            feats.append(model.encoder(**inputs).cpu())
-    return torch.cat(feats, dim=0)
+
+            feats.append(
+                model.encoder(
+                    x=x[s:e],
+                    mask=mask[s:e],
+                    dynamic_world=dw[s:e].long(),
+                    latlons=latlons[s:e],
+                    month=months[s:e].long(),
+                )
+            )
+
+    return torch.cat(feats, dim=0).cpu()
 
 
 def generate_embeddings(
