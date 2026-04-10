@@ -6,7 +6,6 @@
 #       - the user can load the MLP weights from a pretrained model.
 #       - added a classmethod to load the default pretrained model.
 
-import importlib.resources as pkg_resources
 import math
 from collections import OrderedDict
 from copy import deepcopy
@@ -19,6 +18,8 @@ from einops import repeat
 from torch import nn
 from torch.jit import Final
 from torch.nn import functional as F
+from torch.hub import load_state_dict_from_url
+
 
 BANDS_GROUPS_IDX = OrderedDict(
     [
@@ -823,14 +824,21 @@ class Presto(nn.Module):
         ).to(self.encoder.pos_embed.device)
         model.train()
         return model
-    
+
     @classmethod
     def load_pretrained(cls, device=None):
+        """Load the default pretrained Presto model weights from Hugging Face.
+
+        Paper: https://arxiv.org/abs/2304.14065
+        Model weighte from: https://huggingface.co/nasaharvest/presto/tree/main
+        """
+
         if device is None:
             device = "cuda" if torch.cuda.is_available() else "cpu"
 
-        model_path = Path(pkg_resources.files("presto_eokit.models") / "default_model.pt")
+        url = "https://huggingface.co/nasaharvest/presto/resolve/main/default_model.pt"
         model = cls.construct()
-        state_dict = torch.load(model_path, map_location=device)
+        state_dict = load_state_dict_from_url(url, map_location=device, progress=True)
         model.load_state_dict(state_dict)
+
         return model
