@@ -14,9 +14,9 @@ Remote Sensing Timeseries](https://github.com/nasaharvest/presto) from NASA Harv
 Quick install from GitHub:
 
 ```bash
-pip install "presto_eokit[cpu] @ git+https://github.com/DHI/presto-eokit.git"
+pip install git+https://github.com/DHI/presto-eokit.git
 # or
-uv pip install "presto_eokit[cpu] @ git+https://github.com/DHI/presto-eokit.git"
+uv pip install git+https://github.com/DHI/presto-eokit.git
 ```
 
 **CPU/CUDA Flexibility**
