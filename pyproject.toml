@@ -37,19 +37,19 @@ viz = [
 ]
 
 cpu = [
-    "torch==2.6.0+cpu",
+    "torch==2.8.0+cpu",
     "torchvision==0.21.0+cpu",
 ]
 cu124 = [
-    "torch==2.6.0+cu124",
+    "torch==2.8.0+cu124",
     "torchvision==0.21.0+cu124",
 ]
 cu126 = [
-    "torch==2.6.0+cu126",
+    "torch==2.8.0+cu126",
     "torchvision==0.21.0+cu126",
 ]
 cu128 = [
-    "torch==2.6.0+cu128",
+    "torch==2.8.0+cu128",
     "torchvision==0.21.0+cu128",
 ]
 
